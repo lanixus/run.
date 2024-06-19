@@ -4,11 +4,11 @@
 YELLOW="$(tput setaf 3)"
 RED="$(tput setaf 1)"
 RESET="$(tput sgr0)"
-sudo true
-sudo mkdir -p /mnt/server
-sudo git clone ${GIT_ADDRESS} .
-sudo pip install -U --prefix .local ${PY_PACKAGES}
-sudo npm install
+su - root
+mkdir -p /mnt/server
+git clone ${GIT_ADDRESS} .
+pip install -U --prefix .local ${PY_PACKAGES}
+npm install
 
 # Función para instalar Forge
 install_forge() {
